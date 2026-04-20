@@ -39,7 +39,7 @@ jobs:
         with:
           context: .
           load: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/xora:xora-v${{ github.run_number }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/Xora:Xora-v${{ github.run_number }}
           
   security:
     needs: docker
