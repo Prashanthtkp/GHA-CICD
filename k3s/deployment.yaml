@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-fe-deployment
-  namespace: xora
+  namespace: xora-cicd
   labels:
     app: app-fe
 spec:
