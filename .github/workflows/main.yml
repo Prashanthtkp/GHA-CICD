@@ -67,7 +67,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/Xora:Xora-v${{ github.run_number }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/xora:xora-v${{ github.run_number }}
 
   deploy:
     needs: security
@@ -84,7 +84,7 @@ jobs:
           export KUBECONFIG=~/.kube/config
 
           # 1. Update image tag
-          NEW_IMAGE="${{ secrets.DOCKER_USERNAME }}/Xora:Xora-v${{ github.run_number }}"
+          NEW_IMAGE="${{ secrets.DOCKER_USERNAME }}/xora:xora-v${{ github.run_number }}"
           sed -i "s|image:.*|image: ${NEW_IMAGE}|g" k3s/deployment.yaml
 
           # 2. Apply manifests
