@@ -81,7 +81,7 @@ jobs:
 
       - name: Deploy to k3s
         run: |
-          export KUBECONFIG=~/.kube/config
+          export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
           # 1. Update image tag
           NEW_IMAGE="${{ secrets.DOCKER_USERNAME }}/xora:xora-v${{ github.run_number }}"
